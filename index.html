@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AKSANTI SHOP</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    color: #facc15;
+    font-size: 32px;
+}
+
+nav {
+    background: #facc15;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.banner {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.banner button {
+    background: #facc15;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.product img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+}
+
+.add {
+    background: #111827;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.cart {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    flex-wrap: wrap;
+}
+
+.cart-item button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+.remove {
+    background: #dc2626;
+    color: white;
+}
+
+.clear {
+    background: #dc2626;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.whatsapp {
+    display: block;
+    width: 100%;
+    background: #16a34a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AKSANTI SHOP</h1>
+    <p>Votre boutique en ligne au Burundi</p>
+    <p>Qualité - Confiance - Satisfaction</p>
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#produits">Produits</a>
+    <a href="#panier">Mon panier 🛒</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="banner" id="accueil">
+    <h2>Bienvenue chez AKSANTI SHOP</h2>
+    <p>Découvrez nos meilleurs produits aux meilleurs prix.</p>
+    <button onclick="location.href='#produits'">
+        Acheter maintenant
+    </button>
+</section>
+
+<section class="container" id="produits">
+
+<h2>Nos produits</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-shirt">
+<h3>T-shirt moderne</h3>
+<p class="price">25 000 FBu</p>
+<button class="add" onclick="ajouter(1)">
+Ajouter au panier
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Chaussures">
+<h3>Chaussures sport</h3>
+<p class="price">65 000 FBu</p>
+<button class="add" onclick="ajouter(2)">
+Ajouter au panier
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="Téléphone">
+<h3>Téléphone</h3>
+<p class="price">350 000 FBu</p>
+<button class="add" onclick="ajouter(3)">
+Ajouter au panier
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Casque">
+<h3>Casque audio</h3>
+<p class="price">45 000 FBu</p>
+<button class="add" onclick="ajouter(4)">
+Ajouter au panier
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500" alt="Sac">
+<h3>Sac à main</h3>
+<p class="price">55 000 FBu</p>
+<button class="add" onclick="ajouter(5)">
+Ajouter au panier
+</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Montre">
+<h3>Montre</h3>
+<p class="price">40 000 FBu</p>
+<button class="add" onclick="ajouter(6)">
+Ajouter au panier
+</button>
+</div>
+
+</div>
+</section>
+
+<section class="container" id="panier">
+
+<div class="cart">
+
+<h2>🛒 MON PANIER</h2>
+
+<p id="nombre">0 article(s)</p>
+
+<div id="liste"></div>
+
+<h3 id="total">Total : 0 FBu</h3>
+
+<button class="clear" onclick="viderPanier()">
+Vider le panier
+</button>
+
+<button class="whatsapp" onclick="commander()">
+Commander sur WhatsApp
+</button>
+
+</div>
+
+</section>
+
+<section class="container" id="contact">
+<h2>Contactez-nous</h2>
+<p style="text-align:center">
+WhatsApp : +257 621 798 54
+</p>
+<p style="text-align:center">
+Burundi
+</p>
+</section>
+
+<footer>
+<p>© 2026 AKSANTI SHOP</p>
+<p>Merci pour votre confiance !</p>
+</footer>
+
+<script>
+
+const produits = [
+    {id:1, nom:"T-shirt moderne", prix:25000},
+    {id:2, nom:"Chaussures sport", prix:65000},
+    {id:3, nom:"Téléphone", prix:350000},
+    {id:4, nom:"Casque audio", prix:45000},
+    {id:5, nom:"Sac à main", prix:55000},
+    {id:6, nom:"Montre", prix:40000}
+];
+
+let panier = JSON.parse(localStorage.getItem("aksantiPanier")) || [];
+
+function sauvegarder() {
+    localStorage.setItem("aksantiPanier", JSON.stringify(panier));
+}
+
+function ajouter(id) {
+
+    let produit = produits.find(p => p.id === id);
+
+    let article = panier.find(p => p.id === id);
+
+    if(article) {
+        article.quantite++;
+    } else {
+        panier.push({
+            ...produit,
+            quantite:1
+        });
+    }
+
+    sauvegarder();
+    afficher();
+
+    alert("Produit ajouté au panier !");
+}
+
+function augmenter(id) {
+
+    let article = panier.find(p => p.id === id);
+
+    if(article) {
+        article.quantite++;
+    }
+
+    sauvegarder();
+    afficher();
+}
+
+function diminuer(id) {
+
+    let article = panier.find(p => p.id === id);
+
+    if(article) {
+        article.quantite--;
+
+        if(article.quantite <= 0) {
+            panier = panier.filter(p => p.id !== id);
+        }
+    }
+
+    sauvegarder();
+    afficher();
+}
+
+function supprimer(id) {
+
+    panier = panier.filter(p => p.id !== id);
+
+    sauvegarder();
+    afficher();
+}
+
+function viderPanier() {
+
+    if(confirm("Voulez-vous vraiment vider le panier ?")) {
+        panier = [];
+        sauvegarder();
+        afficher();
+    }
+}
+
+function afficher() {
+
+    let liste = document.getElementById("liste");
+
+    let total = 0;
+    let nombre = 0;
+
+    liste.innerHTML = "";
+
+    panier.forEach(p => {
+
+        let sousTotal = p.prix * p.quantite;
+
+        total += sousTotal;
+        nombre += p.quantite;
+
+        liste.innerHTML += `
+        <div class="cart-item">
+
+            <div>
+                <strong>${p.nom}</strong><br>
+                ${p.prix.toLocaleString("fr-FR")} FBu
+            </div>
+
+            <div>
+                <button onclick="diminuer(${p.id})">−</button>
+
+                ${p.quantite}
+
+                <button onclick="augmenter(${p.id})">+</button>
+            </div>
+
+            <div>
+                ${sousTotal.toLocaleString("fr-FR")} FBu
+            </div>
+
+            <button class="remove"
+            onclick="supprimer(${p.id})">
+                Supprimer
+            </button>
+
+        </div>
+        `;
+    });
+
+    if(panier.length === 0) {
+        liste.innerHTML = "<p>Votre panier est vide.</p>";
+    }
+
+    document.getElementById("total").innerHTML =
+    "Total : " + total.toLocaleString("fr-FR") + " FBu";
+
+    document.getElementById("nombre").innerHTML =
+    nombre + " article(s)";
+}
+
+function commander() {
+
+    if(panier.length === 0) {
+        alert("Votre panier est vide !");
+        return;
+    }
+
+    let message = "Bonjour AKSANTI SHOP ! Je souhaite commander :\n\n";
+
+    let total = 0;
+
+    panier.forEach(p => {
+
+        let sousTotal = p.prix * p.quantite;
+
+        message += p.nom +
+        " x " + p.quantite +
+        " = " + sousTotal + " FBu\n";
+
+        total += sousTotal;
+    });
+
+    message += "\nTOTAL : " + total + " FBu";
+
+    message += "\n\nMerci de me confirmer ma commande.";
+
+    let url = "https://wa.me/25762179854?text=" +
+    encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+
+afficher();
+
+</script>
+
+</body>
+</html>
